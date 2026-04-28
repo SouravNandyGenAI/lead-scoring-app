@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Scoring App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        h1 { text-align: center; }
+        form { display: grid; gap: 12px; }
+        input, select, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover { background: #0056b3; }
+        label { font-weight: bold; }
+        .hint { color: #555; font-size: 14px; margin-top: -6px; }
+    </style>
+</head>
+<body>
+    <h1>Lead Scoring Application</h1>
+    <form method="POST">
+        <label>Name</label>
+        <input type="text" name="name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Company Size</label>
+        <input type="number" name="company_size" min="1" required>
+
+        <label>Job Title</label>
+        <input type="text" name="job_title" required>
+
+        <label>Industry</label>
+        <input type="text" name="industry" required>
+
+        <label>Website Visits</label>
+        <input type="number" name="website_visits" min="0" required>
+
+        <label>Email Opens</label>
+        <input type="number" name="email_opens" min="0" required>
+
+        <label>Demo Requested</label>
+        <select name="demo_requested">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
+
+        <label>Budget</label>
+        <input type="number" name="budget" min="0" required>
+
+        <button type="submit">Score Lead</button>
+        <div class="hint">Deployment-ready for Render using Gunicorn.</div>
+    </form>
+</body>
+</html>

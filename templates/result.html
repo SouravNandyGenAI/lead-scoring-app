@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Score Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .result-box {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+        .hot { color: red; }
+        .warm { color: orange; }
+        .cold { color: blue; }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            background: #007bff;
+            padding: 10px 16px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lead Score Result</h1>
+
+    <div class="result-box">
+        <p><strong>Name:</strong> {{ lead.name }}</p>
+        <p><strong>Email:</strong> {{ lead.email }}</p>
+        <p><strong>Score:</strong> {{ score }}</p>
+        <p>
+            <strong>Category:</strong>
+            <span class="{{ category|lower }}">{{ category }}</span>
+        </p>
+    </div>
+
+    <a href="/">Score Another Lead</a>
+</body>
+</html>
