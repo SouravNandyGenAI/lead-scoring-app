@@ -81,3 +81,16 @@ def health():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
+    @app.post("/api/score-lead")
+def score_lead_api():
+    data = request.get_json(force=True)
+
+    scorer = LeadScorer()
+    score = scorer.score_lead(data)
+    category = scorer.classify_lead(score)
+
+    return {
+        "score": score,
+        "category": category
+    }, 200
